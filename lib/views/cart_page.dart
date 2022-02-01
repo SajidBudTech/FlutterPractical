@@ -24,6 +24,20 @@ class _CartPageState extends State<CartPage> with AutomaticKeepAliveClientMixin<
   bool get wantKeepAlive => true;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    widget.model.refreshPage.listen((event) {
+      if(event){
+        setState(() {
+
+        });
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     super.build(context);
     return Scaffold(
@@ -46,11 +60,6 @@ class _CartPageState extends State<CartPage> with AutomaticKeepAliveClientMixin<
                         model: widget.model,
                         onRemovePressed: () {
                            widget.model.removeCart(widget.model.cartList[index]);
-                           Future.delayed(Duration(seconds: 3), (){
-                             setState(() {
-
-                             });
-                           });
                         },
                       );
                     },

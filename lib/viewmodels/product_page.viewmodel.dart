@@ -9,6 +9,7 @@ import 'package:flutter_practical/viewmodels/base.viewmodel.dart';
 import 'package:rxdart/subjects.dart';
 
 class ProductPageViewModel extends MyBaseViewModel {
+
   LoadingState productLoadingState=LoadingState.Loading;
   ProductRepository _productRepository=ProductRepository();
   List<Product> products=[];
@@ -102,6 +103,7 @@ class ProductPageViewModel extends MyBaseViewModel {
         flashType: FlashType.success)
         .show();
 
-     notifyListeners();
+      setRefreshPage(true);
+     //notifyListeners();
   }
 }

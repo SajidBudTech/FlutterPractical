@@ -88,7 +88,6 @@ class ProductListViewItem extends StatelessWidget {
                     ),
                     UiSpacer.horizontalSpace(space: 10),
                     Expanded(
-
                         child: Container(
                           alignment: Alignment.centerRight,
                         child:InkWell(
